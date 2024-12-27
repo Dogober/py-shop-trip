@@ -36,3 +36,18 @@ class Customer:
     def go_home(self) -> None:
         print(f"{self.name} rides home")
         print(f"{self.name} now has {self.money} dollars")
+        print("")
+
+    def go_buy(self, shop_name: str, costs_amount: float | int) -> None:
+        self.money -= costs_amount
+        print(f"{self.name} rides to {shop_name}")
+        print("")
+
+    def go_shop(self, shop_name: str, total_costs: float | int) -> None:
+        print(
+            f"{self.name}'s trip to the "
+            f"{shop_name} costs {total_costs}"
+        )
+
+    def has_money(self) -> None:
+        print(f"{self.name} has {self.money} dollars")

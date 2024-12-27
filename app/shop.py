@@ -25,11 +25,15 @@ class Shop:
         for product_name, quantity in customer.product_cart.items():
             products_cost = self.products[product_name] * quantity
             total_cost += products_cost
+
             if "0" in str(products_cost).split("."):
                 products_cost = int(products_cost)
+
             print(
                 f"{quantity} {product_name}s for "
                 f"{products_cost} dollars"
             )
+
         print(f"Total cost is {total_cost} dollars")
         print("See you again!")
+        print("")

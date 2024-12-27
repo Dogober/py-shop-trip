@@ -6,27 +6,22 @@ def shop_trip() -> None:
     fuel_price, customers, shops = load_data()
 
     for customer in customers:
-        print(f"{customer.name} has {customer.money} dollars")
+        customer.has_money()
         costs = []
+
         for shop in shops:
             total_costs = (calc_distance_cost(customer, shop, fuel_price)
                            + calc_purchases_cost(customer, shop))
             total_costs = round(total_costs, 2)
             costs.append((total_costs, shop))
-            print(
-                f"{customer.name}'s trip to the "
-                f"{shop.name} costs {total_costs}"
-            )
+            customer.go_shop(shop.name, total_costs)
+
         costs_amount, shop = min(costs)
 
         if costs_amount <= customer.money:
-            print(f"{customer.name} rides to {shop.name}")
-            print("")
-            customer.money -= costs_amount
+            customer.go_buy(shop.name, costs_amount)
             shop.print_check(customer)
-            print("")
             customer.go_home()
-            print("")
         else:
             print(
                 f"{customer.name} doesn't have enough money "
