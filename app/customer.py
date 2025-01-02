@@ -28,7 +28,7 @@ class Customer:
 
     def purchases_cost(self, products: dict[str, int]) -> float | int:
         costs = 0
-        for product in self.product_cart.keys():
+        for product in self.product_cart:
             costs += self.product_cart[product] * products[product]
 
         return costs
@@ -36,12 +36,12 @@ class Customer:
     def go_home(self) -> None:
         print(f"{self.name} rides home")
         print(f"{self.name} now has {self.money} dollars")
-        print("")
+        print()
 
     def go_buy(self, shop_name: str, costs_amount: float | int) -> None:
         self.money -= costs_amount
         print(f"{self.name} rides to {shop_name}")
-        print("")
+        print()
 
     def go_shop(self, shop_name: str, total_costs: float | int) -> None:
         print(

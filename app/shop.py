@@ -15,8 +15,7 @@ class Shop:
         self.products = products
 
     def print_check(self, customer: Customer) -> None:
-        current_time = datetime.datetime.now()
-        current_time = current_time.strftime("%d/%m/%Y %H:%M:%S")
+        current_time = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         print(f"Date: {current_time}")
         print(f"Thanks, {customer.name}, for your purchase!")
         print("You have bought:")
@@ -36,4 +35,4 @@ class Shop:
 
         print(f"Total cost is {total_cost} dollars")
         print("See you again!")
-        print("")
+        print()

@@ -3,5 +3,5 @@ class Car:
         self.brand = brand
         self.fuel_consumption = fuel_consumption
 
-    def fuel_needed_for_trip(self, distance: float | int) -> float | int:
+    def fuel_needed_for_trip(self, distance: float | int) -> float:
         return (self.fuel_consumption / 100) * distance
